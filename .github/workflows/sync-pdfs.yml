@@ -6,6 +6,7 @@ on:
       - 'PDF/梅越_简历.pdf'
     branches:
       - main
+  workflow_dispatch:  # 添加手动触发支持
 jobs:
   sync:
     runs-on: ubuntu-latest
