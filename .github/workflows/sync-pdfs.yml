@@ -1,0 +1,46 @@
+name: Sync PDFs to Homepage
+on:
+  push:
+    paths:
+      - 'PDF/Edwin_CV.pdf'
+      - 'PDF/梅越_简历.pdf'
+    branches:
+      - main
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout WebLaTex repo
+        uses: actions/checkout@v4
+        with:
+          path: weblatex
+          fetch-depth: 1
+      
+      - name: Checkout Homepage repo
+        uses: actions/checkout@v4
+        with:
+          repository: TuoYe25/tuoye25.github.io
+          path: homepage
+          token: ${{ secrets.GITHUB_TOKEN }}  # 自动生成，对当前用户的仓库有写权限
+      
+      - name: Create docs directory
+        run: mkdir -p homepage/docs
+      
+      - name: Copy PDF files
+        run: |
+          cp weblatex/PDF/Edwin_CV.pdf homepage/docs/
+          cp weblatex/PDF/梅越_简历.pdf homepage/docs/
+      
+      - name: Commit and push changes
+        working-directory: homepage
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/
+          if git diff --staged --quiet;
+          then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "Sync latest PDFs from WebLaTex"
+          git push
