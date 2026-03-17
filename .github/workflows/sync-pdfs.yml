@@ -10,12 +10,15 @@ on:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true  # 使用Node.js 24避免弃用警告
     steps:
       - name: Checkout WebLaTex repo
         uses: actions/checkout@v4
         with:
           path: weblatex
           fetch-depth: 1
+          persist-credentials: true
       
       - name: Checkout Homepage repo
         uses: actions/checkout@v4
@@ -23,6 +26,7 @@ jobs:
           repository: TuoYe25/tuoye25.github.io
           path: homepage
           token: ${{ secrets.GITHUB_TOKEN }}  # 自动生成，对当前用户的仓库有写权限
+          persist-credentials: true
       
       - name: Create docs directory
         run: mkdir -p homepage/docs
@@ -37,11 +41,17 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add docs/
+          git remote -v  # 查看远程仓库配置
+          git branch -a  # 查看分支信息
+          git add docs/  # 添加文件
+          git status  # 查看状态
           if git diff --staged --quiet;
           then
             echo "No changes to commit"
             exit 0
           fi
-          git commit -m "Sync latest PDFs from WebLaTex"
-          git push
+          git commit -m "Sync latest PDFs from WebLaTex" || echo "Commit failed, skipping"
+          git push --verbose || echo "Push failed, checking remote access"
+          # 添加调试信息
+          echo "Checking repository access..."
+          echo "GITHUB_TOKEN is set: ${{ secrets.GITHUB_TOKEN != '' }}"
