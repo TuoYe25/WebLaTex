@@ -1,0 +1,183 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Edwin Mei's CV
+%
+% Important note:
+% This template requires the resume.cls file to be in the same directory as the
+% .tex file. The resume.cls file provides the resume style used for structuring the
+% document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%------------------------------------------------\----------------------------------------
+
+\documentclass{resume} % Use the custom resume.cls style
+\usepackage{xeCJK}
+% \setCJKmainfont{FandolSong}
+\setCJKmainfont[BoldFont={Microsoft YaHei UI Bold}]{楷体}
+\usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry} % Document margins
+
+\name{梅越} % Name
+\address{主页：https://tuoye25.github.io/} % Home
+\address{名片：https://bonjour.bio/edwinm/} % Busines Card
+\address{(+86)~$\cdot$~18964070908} % Phone number
+\address{edwin\_mei-yue@foxmail.com} % Email
+
+\begin{document}
+% %----------------------------------------------------------------------------------------
+% %	Core
+% %----------------------------------------------------------------------------------------
+
+% \begin{rSection}{核心优势总结}
+
+% \end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{学历}
+
+  {\bf Roux研究院，美国东北大学} \hfill {\em 06.2025} \\
+  计算机科学硕士 \hfill GPA: \textbf {4.0}
+
+  {\bf 俄亥俄州立大学，美国} \hfill {\em 06.2019} \\
+  电气与计算机工程学士 \hfill 数学辅修
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{工作}
+
+  \begin{rSubsection}{富谙智信息技术有限公司}{12.2021 - 07.2022}{数据分析研发师}{上海}
+    \item 在敏捷开发环境中以全栈工程师的角色负责研发与改进核心库 FNZOneX
+    \item 为顾问组设计新的用户组结构并修改由 Alchemist 基于用户权限矩阵生成的定义脚本
+    \item 为不同开发/测试环境制作运行 SQL 脚本组
+    \item 在浏览器中通过检查的功能（元素，主控，资源，网络）调试 JavaScript 报错；通过 VS 调试模式定位
+    aspx/aspx.vb 报错
+    \item 设置，修改和分享 IIS 服务器配置用于开发和演示
+    \item 通过和国际 IT 部门以及跨团队部门合作以解决管辖相关问题
+    \item 解决由测试员发现的显示和发布问题， 并且和测试员一起功能审查前自测并制订测试流程
+  \end{rSubsection}
+
+  \begin{rSubsection}{上海微创软件股份有限公司（微软大中华区）}{10.2019 - 12.2021}{云架构工程师 \& 技术顾问}{上海}
+    \item 专注于微软云 Azure 中四个产品：Monitor, Log Analytics, Automation and Application Insights 的技术支持
+    \item 定制警报配置、查询搜索、数据采样和多样性能计数器采集
+    \item 捕获并分析 NetMon、ProcMon 和 Fiddler 跟踪，以解决代理、混合工作程序和门户问题；通过 Azure
+    仪表板、度量资源管理器和工作簿可视化数据
+    \item 使用 Visual Studio/VS 代码在.Net/.Net Core/Java/Python/JavaScript 中调试 Application Insights SDK 配置脚本
+    \item 帮助设计、修改和调试 PowerShell/Python/PS 工作流/图形运行手册和 DSC 配置；提供有关合作伙伴集成和工作区解决方案的建议，如更新管理、自动启动/停止虚拟机、更改跟踪和资源清册
+    \item 对接 Adobe，Intel 和 Amazon 等关键客户并专门处理风险或长期案例升级
+    \item 负责保护上海，无锡和北京在内的 12 人团队并解决跨团队争议
+    \item 与领队以及协作技术顾问合作进行案例分析，技术面试和团队规划
+  \end{rSubsection}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	PROJECT SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{项目}
+
+  \begin{rSubsection}{银河卷积神经网络的数据集蒸馏}{09.2024 - 04.2025}{导师：Tala Talaei Khoei}{NEU}
+    \item 通过使用最新 Galaxy Zoo 数据集的提取和整理版本，在星系形态分类等任务中展现出卓越的性能
+    \item 仔细调整统计显著性阈值以确定验证损失趋势，以优化性能
+    \item 使用 STM 来防止过拟合并加速学习过程
+    \item 提供更高的分类准确性和更高效的训练，同时减少类别失衡并提高整体数据质量
+    \item 基于本项目成果的论文（本人为一作）已投稿至Springer旗下期刊，目前正在审稿中
+  \end{rSubsection}
+
+  \begin{rSubsection}{深度强化学习的知识蒸馏}{07.2023 - 09.2023}{导师：Mark Vogelsberger}{MIT}
+    \item 通过 pytorch 提供的深度 Q 网络搭建深度强化学习的教师与学生模型
+    \item 在 Gymnasium 提供的 CartPole 环境中进行实验比较
+    \item 通过改变温度和回归次数等参数来测试知识蒸馏的效率
+    \item 在 CartPole, MountainCar, Acrobot, LunarLander and Pendulum 环境中比较不同的马可夫决策过程
+    \item 在更复杂的深度回归 Q 网络中实现知识蒸馏
+    \item 本项目的研究成果已形成学术论文，发表于机器学习顶级会议 ICICML 2023：\\https://doi.org/10.1109/ICICML60161.2023.10424889
+  \end{rSubsection}
+
+  \begin{rSubsection}{毕业设计：太阳能电池板检测仪}{01.2019 - 04.2019}{导师：Haskell Jac Fought}{OSU}
+    \item 设计并修改软件部分的需求，特征和行为流程图
+    \item 在 Android Studio 上设计，编程并测试蓝牙串行通讯模块
+    \item 从 Arduino 机械码转换已有代码至安卓
+  \end{rSubsection}
+
+  \begin{rSubsection}{AEV 设计，搭建与调试}{01.2016-05.2016}{导师：Lauren Corrigan}{OSU}
+    \item 通过 Arduino 集成开发编译器编程
+    \item 用 Solid Works 设计 Arduino 的部件，精准控制其尺寸和形状
+    \item 测试并记录 Arduino 的表现，控制变量以提升其空气动力效率
+  \end{rSubsection}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	CO-OP & PART-TIME SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{实习 \& 兼职}
+
+  \begin{rSubsection}{Roux机器学习课}{01.2025 - 05.2025}{助教}{美国}
+    \item 辅导学生了解不同类型的的机器学习模型以及相关技巧
+    \item 与教授讨论课程分配；在办公时间回答问题并检阅项目
+  \end{rSubsection}
+
+  \begin{rSubsection}{俄州大电气与计算机系实验室}{09.2018 - 12.2018}{实验助教 \& 阅卷人}{美国}
+    \item 实验期间指导学生练习 TI MPS430 系列微控制器编码
+    \item 批改每周测试和实验报告
+  \end{rSubsection}
+
+  \begin{rSubsection}{华虹计通}{05.2018 - 07.2018}{软件研发工程师}{上海}
+    \item 学习自动售检票系统系统构架，数据流设计，运作原则以及编码规则
+    \item 改进西安地铁 1 至 4 号线地铁 UI 交互界面并更新最新地铁线路数据
+    \item 从甲骨文 SQL 至 DB2 的数据库转移
+  \end{rSubsection}
+
+  \begin{rSubsection}{华信能源}{05.2017 - 07.2017}{信息系统工程师}{上海}
+    \item 改善公司前端 OA 系统，新增人性化时间表并与公司 app (Android / IOS)连接
+    \item 设计 Access VBA 宏指令集，自动计算各部门电话账单并进行简单的筛选、报表统计和导出
+  \end{rSubsection}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	SKILL
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{技能}
+
+  \begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
+    编程语言   & Python, C\#, Java, C++, Golang, Shell, JavaScript, M, VBA, VHDL \\
+    深度学习框架 & PyTorch (精通), TensorFlow                                        \\
+    模型优化技术 & 知识蒸馏 (Knowledge Distillation), 模型量化, 剪枝, 推理加速                   \\
+    数据库    & Microsoft SQL, KQL, MySQL, MongoDB, SQLite                      \\
+    云平台与架构 & Azure, AWS, 分布式系统, 微服务                                          \\
+    开发工具   & VS, VS Code, Git, Docker, SQL Server, Kusto                     \\
+    硬件基础   & Arduino, Multiplexers, PLDs, Clocked Sequential Circuits,VLSI   \\
+  \end{tabular}
+
+\end{rSection}
+
+
+% ----------------------------------------------------------------------------------------
+% 	COURSEWORK
+% ----------------------------------------------------------------------------------------
+
+% \begin{rSection}{课程}
+
+% \begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
+% 计算机  & 机器学习，数据库管理系统，算法，云计算，软件开发和设计，操作系统，计算机体系结构和设计，计算机组织与嵌入式系统\\
+% 电气 & 模拟系统与电路，信号系统，数位逻辑，微控制器，半导体电子设备，光学工程，反馈控制系统，高级数字化设计，VLSI 数字信号处理系统\\
+% 数学 & 科学家与工程师微积分，线性代数，高等数学，数值分析，偏微分方程\\
+% 其他 & 工程经济决策，工程伦理学，工程师概率论和统计学\\
+% \end{tabular}
+
+% \end{rSection}
+
+
+
+\end{document}
