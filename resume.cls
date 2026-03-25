@@ -6,12 +6,51 @@
 
 \LoadClass[11pt,letterpaper]{article} % Font size and paper type
 
-\usepackage[parfill]{parskip} % Remove paragraph indentation
+\usepackage{parskip} % Remove paragraph indentation
 \usepackage{array} % Required for boldface (\bf and \bfseries) tabular columns
 \usepackage{ifthen} % Required for ifthenelse statements
 \usepackage{setspace}
 \usepackage{multicol}
-\pagestyle{empty} % Suppress page numbers
+
+% 添加图片和背景支持包
+\usepackage{eso-pic}
+\usepackage{graphicx}
+
+% 添加页码配置
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+% 确保页码样式正确应用
+\AtBeginDocument{
+  \pagestyle{fancy}
+  \fancyhf{}
+  \fancyfoot{
+    \centering % 强制居中
+    \thepage/\pageref{LastPage}% 显示格式为：当前页/总页数
+  }
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+  
+  % 添加全屏背景图 - 不使用transparent包以避免兼容性问题
+  \AddToShipoutPictureBG{
+    \AtPageLowerLeft{
+      \includegraphics[width=\paperwidth,height=\paperheight]{background.jpg}
+    }
+  }
+  
+  % 添加页眉背景图，居中显示
+  \AddToShipoutPictureBG{
+    \AtPageLowerLeft{
+      \makebox[\paperwidth][c]{
+        \raisebox{\dimexpr\paperheight-0.5in}{
+          \includegraphics[height=0.75in]{header.png}
+        }
+      }
+    }
+  }
+}
+
+
 
 %----------------------------------------------------------------------------------------
 %	HEADINGS COMMANDS: Commands for printing name and address
