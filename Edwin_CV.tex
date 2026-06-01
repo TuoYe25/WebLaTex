@@ -39,10 +39,54 @@
 \end{rSection}
 
 %----------------------------------------------------------------------------------------
+%	PROJECT SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Project}
+
+    \begin{rSubsection}{Dataset Distillation of Galaxy CNN}{Sep 2024 - Apr 2025}{Inst. Tala Talaei Khoei}{NEU}
+        \item Demonstrated superior performance in tasks like galaxy morphology classification by using a distilled and curated version of the newest Galaxy Zoo dataset.
+        \item Careful tuning of statistical significance thresholds for validation loss trends to optimize performance.
+        \item Used STM to prevent overfitting and accelerate the learning process.
+        \item Offered higher classification accuracy and more efficient training, while mitigated class imbalance and improved overall data quality.
+        \item A manuscript detailing this work is currently under review at Springer.
+    \end{rSubsection}
+
+    \begin{rSubsection}{Knowledge Distillation of Deep Reinforcement Learning}{Jul 2023 - Sep 2023}{Inst. Mark Vogelsberger}{MIT}
+        \item Built teacher and student DQN models for deep reinforcement learning using PyTorch.
+        \item Carried out comparative experiments in CartPole, MountainCar, Acrobot, LunarLander and Pendulum environments from Gymnasium.
+        \item Systematically tuned hyperparameters (temperature, regression rounds) to evaluate knowledge distillation efficiency across different MDPs.
+        \item Extended knowledge distillation to Deep Recurrent Q-Networks (DRQN) for more complex sequential decision-making tasks.
+        \item The core findings of this project were published as a full paper at ICICML 2023: \\https://doi.org/10.1109/ICICML60161.2023.10424889
+    \end{rSubsection}
+
+    \begin{rSubsection}{Capstone : Solar Panel Validation Device}{Jan 2019 - Apr 2019}{Inst. Haskell Jac Fought}{OSU}
+        \item Developed a Bluetooth serial communication module on Android Studio.
+        \item Designed software requirements, features and behavior charts.
+        \item Converted Arduino coding to Android.
+    \end{rSubsection}
+
+    \begin{rSubsection}{Advanced Energy Vehicle Design-and-Build Project}{Jan 2016 - May 2016}{Inst. Lauren Corrigan}{OSU}
+        \item Coded Arduino through Arduino Integrated Development Editor.
+        \item Used Solid Works to design components of Arduino with its size and shape controlled precisely.
+        \item Recorded Arduino performance and helped improve its air dynamic efficiency.
+    \end{rSubsection}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
 %	WORK EXPERIENCE SECTION
 %----------------------------------------------------------------------------------------
 
 \begin{rSection}{Experience}
+
+    \begin{rSubsection}{Digital Factory (Side Business)}{Jan 2026 - Present}{Co-founder \& CTO}{Shanghai, China}
+        \item Led the construction of a distributed AI factory system based on multi-agent collaboration, responsible for overall technical architecture design and AI model orchestration.
+        \item Designed and implemented hybrid cloud-on-premises inference architecture, integrating multiple large models including Claude Code, DeepSeek V4 Pro, and Qwen (distilled from Opus 4.7). Achieved local low-cost inference through Ollama, optimizing response speed and computing costs.
+        \item Built a multi-Agent collaboration framework using Multica + OpenClaw, scheduling digital employees like Hermes and QoderWake to process complex tasks in parallel, enabling an automated pipeline for game design operations.
+        \item Established the technical infrastructure from scratch, covering core modules including AI inference, task orchestration, and multi-model routing.
+        \item Expanded the business from game design to multiple verticals including group buying, demonstrating strong system portability and horizontal scalability.
+    \end{rSubsection}
 
     \begin{rSubsection}{FNZ Information Technology}{Dec 2021 - July 2022}{Analyst Developer}{Shanghai, China}
         \item Worked as a full-stack engineer in agile software development with a focus on the Core Repository - FNZOneX.
@@ -69,43 +113,6 @@
 \end{rSection}
 
 %----------------------------------------------------------------------------------------
-%	PROJECT SECTION
-%----------------------------------------------------------------------------------------
-
-\begin{rSection}{Project}
-
-    \begin{rSubsection}{Dataset Distillation of Galaxy CNN}{Sep 2024 - Apr 2025}{Inst. Tala Talaei Khoei}{NEU}
-        \item Demonstrated superior performance in tasks like galaxy morphology classification by using a distilled and curated version of the newest Galaxy Zoo dataset.
-        \item Careful tuning of statistical significance thresholds for validation loss trends to optimize performance.
-        \item Used STM to prevent overfitting and accelerate the learning process.
-        \item Offered higher classification accuracy and more efficient training, while mitigated class imbalance and improved overall data quality.
-        \item A manuscript detailing this work is currently under review at Springer.
-    \end{rSubsection}
-
-    \begin{rSubsection}{Knowledge Distillation of Deep Reinforcement Learning}{Jul 2023 - Sep 2023}{Inst. Mark Vogelsberger}{MIT}
-        \item Built up a teacher model, and a student mode based DRL code from Pytorch DQN section.
-        \item Carried out comparative experiments in the typcial CartPole environment from Gymnasium.
-        \item Changed parameters like temperature and recurrency to test the efficiency of knowledge distillation.
-        \item Compared different MDPs in CartPole, MountainCar, Acrobot, LunarLander and Pendulum.
-        \item Realized knowledge distillation in the more complicated DRQN.
-        \item The core findings of this project were published as a full paper at ICICML 2023: \\https://doi.org/10.1109/ICICML60161.2023.10424889
-    \end{rSubsection}
-
-    \begin{rSubsection}{Capstone : Solar Panel Validation Device}{Jan 2019 - Apr 2019}{Inst. Haskell Jac Fought}{OSU}
-        \item Developed a Bluetooth serial communication module on Android Studio.
-        \item Designed software requirements, features and behavior charts.
-        \item Converted Arduino coding to Android.
-    \end{rSubsection}
-
-    \begin{rSubsection}{Advanced Energy Vehicle Design-and-Build Project}{Jan 2016 - May 2016}{Inst. Lauren Corrigan}{OSU}
-        \item Coded Arduino through Arduino Integrated Development Editor.
-        \item Used Solid Works to design components of Arduino with its size and shape controlled precisely.
-        \item Recorded Arduino performance and helped improve its air dynamic efficiency.
-    \end{rSubsection}
-
-\end{rSection}
-
-%----------------------------------------------------------------------------------------
 %	CO-OP & PART-TIME SECTION
 %----------------------------------------------------------------------------------------
 
@@ -123,7 +130,7 @@
 
     \begin{rSubsection}{Huahong Jitong Smart System}{May 2018 - Jul 2018}{Software Development Engineer}{Shanghai, China}
         \item Mastered the structure, data flow, operation \& coding of Automatic-Fare-Collection(AFC) system.
-        \item Improved the UI design and updated the traffic data for transit system of Xi’an Metro Line 1-Line 4.
+        \item Improved the UI design and updated the traffic data for transit system of Xi'an Metro Line 1-Line 4.
         \item Contributed to the database transfer from Oracle SQL to DB2.
     \end{rSubsection}
 
@@ -140,12 +147,13 @@
 
 \begin{rSection}{Skill}
 
-    \begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
-        Languages         & Python, C\#, Java, C++, Golang, Shell, JavaScript, M, VBA, VHDL            \\
+    \begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} p{14cm} }
+        Languages           & Python, C\#, Java, C++, Golang, Shell, JavaScript, M, VBA, VHDL            \\
+        ML Frameworks       & PyTorch, TensorFlow, Keras, Scikit-learn                                 \\
+        Model Optimization  & Knowledge Distillation, Quantization, Pruning, Inference Acceleration     \\
         Databases         & Microsoft SQL, KQL, MySQL, MongoDB, SQLite                                 \\
-        Cloud             & Azure, AWS, DevOps, Google, Alibaba, Tencent                               \\
-        Protocols \& APIs & XML, JSON, REST, TCP, UDP                                                  \\
-        Software          & VS, VS Code, SQL Server, Android Studio, Unity, Kusto, IIS, Matlab, Access \\
+        Cloud               & Azure, AWS, Distributed Systems, Microservices                            \\
+        Dev Tools           & VS, VS Code, Git, Docker, SQL Server, Kusto                               \\
         Hardware          & Arduino, Multiplexers, PLDs, Clocked Sequential Circuits,VLSI              \\
     \end{tabular}
 

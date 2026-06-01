@@ -18,7 +18,6 @@
 
 % 添加页码配置
 \usepackage{fancyhdr}
-\usepackage{lastpage}
 
 % 确保页码样式正确应用
 \AtBeginDocument{
@@ -26,10 +25,12 @@
   \fancyhf{}
   \fancyfoot{
     \centering % 强制居中
-    \thepage/\pageref{LastPage}% 显示格式为：当前页/总页数
+    \thepage % 只显示当前页码，避免两次编译的问题
   }
   \renewcommand{\headrulewidth}{0pt}
   \renewcommand{\footrulewidth}{0pt}
+  
+
   
   % 添加全屏背景图 - 不使用transparent包以避免兼容性问题
   \AddToShipoutPictureBG{
@@ -49,6 +50,8 @@
     }
   }
 }
+
+
 
 
 
