@@ -14,8 +14,8 @@
 
 \documentclass{resume} % Use the custom resume.cls style
 \usepackage{xeCJK}
-% \setCJKmainfont{FandolSong}
-\setCJKmainfont[BoldFont={Microsoft YaHei UI Bold}]{楷体}
+% 中文字体：Fandol 随 TeXLive 分发，Windows / macOS / CI 渲染完全一致
+\setCJKmainfont[BoldFont={FandolHei-Bold.otf}]{FandolKai-Regular.otf}
 \usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry} % Document margins
 
 \name{梅越} % Name
@@ -32,10 +32,10 @@
 
 \begin{rSection}{学历}
 
-  {\bf Roux研究院，美国东北大学} \hfill {\em 06.2025} \\
+  {\bf Roux研究院，美国东北大学} \hfill {\em 01.2024 - 06.2025} \\
   计算机科学硕士 \hfill GPA: \textbf {4.0}
 
-  {\bf 俄亥俄州立大学，美国} \hfill {\em 06.2019} \\
+  {\bf 俄亥俄州立大学，美国} \hfill {\em 08.2015 - 06.2019} \\
   电气与计算机工程学士 \hfill 数学辅修
 
 \end{rSection}
@@ -60,26 +60,25 @@
   \end{rSubsection}
 
   \begin{rSubsection}{富谙智信息技术有限公司}{12.2021 - 07.2022}{数据分析研发师}{上海}
-    \item 在敏捷开发环境中以全栈工程师的角色负责研发与改进核心库 FNZOneX
-    \item 为顾问组设计新的用户组结构并修改由 Alchemist 基于用户权限矩阵生成的定义脚本
-    \item 为不同开发/测试环境制作运行 SQL 脚本组
-    \item 在浏览器中通过检查的功能（元素，主控，资源，网络）调试 JavaScript 报错；通过 VS 调试模式定位
-    aspx/aspx.vb 报错
-    \item 设置，修改和分享 IIS 服务器配置用于开发和演示
-    \item 通过和国际 IT 部门以及跨团队部门合作以解决管辖相关问题
-    \item 解决由测试员发现的显示和发布问题， 并且和测试员一起功能审查前自测并制订测试流程
+    \item 在敏捷开发环境中以全栈工程师角色负责核心库 FNZOneX 的研发与改进
+    \item 为顾问（Adviser）组设计新的用户组结构，并调整 Alchemist 依据用户权限矩阵生成的定义脚本
+    \item 将第三方 Addressy 地址查询 API 集成至网站全部地址字段
+    \item 为多套开发/测试环境编写并维护运行期 SQL 脚本集
+    \item 通过浏览器开发者工具（Elements / Console / Sources / Network）定位 JavaScript 报错，并使用 Visual Studio 调试模式排查 aspx/aspx.vb 异常
+    \item 配置、修改并共享 IIS 服务器设置，用于开发与演示环境
+    \item 与全球 IT 部门及跨团队同事协作，处理跨区域权限与职责边界问题
+    \item 解决测试人员反馈的阻塞与发布问题，并在功能评审前完成自测与测试流程制定
   \end{rSubsection}
 
   \begin{rSubsection}{上海微创软件股份有限公司（微软大中华区）}{10.2019 - 12.2021}{云架构工程师 \& 技术顾问}{上海}
-    \item 专注于微软云 Azure 中四个产品：Monitor, Log Analytics, Automation and Application Insights 的技术支持
-    \item 定制警报配置、查询搜索、数据采样和多样性能计数器采集
-    \item 捕获并分析 NetMon、ProcMon 和 Fiddler 跟踪，以解决代理、混合工作程序和门户问题；通过 Azure
-    仪表板、度量资源管理器和工作簿可视化数据
-    \item 使用 Visual Studio/VS 代码在.Net/.Net Core/Java/Python/JavaScript 中调试 Application Insights SDK 配置脚本
-    \item 帮助设计、修改和调试 PowerShell/Python/PS 工作流/图形运行手册和 DSC 配置；提供有关合作伙伴集成和工作区解决方案的建议，如更新管理、自动启动/停止虚拟机、更改跟踪和资源清册
-    \item 对接 Adobe，Intel 和 Amazon 等关键客户并专门处理风险或长期案例升级
-    \item 负责保护上海，无锡和北京在内的 12 人团队并解决跨团队争议
-    \item 与领队以及协作技术顾问合作进行案例分析，技术面试和团队规划
+    \item 负责微软云 Azure 四个产品（Monitor、Log Analytics、Automation、Application Insights）的技术支持
+    \item 定制警报配置、查询搜索、数据采样与多类性能计数器采集
+    \item 捕获并分析 NetMon、ProcMon 与 Fiddler 跟踪，定位代理、混合辅助角色与门户问题；通过 Azure 仪表板、度量资源管理器与工作簿完成数据可视化
+    \item 使用 Visual Studio / VS Code 在 .Net / .Net Core / Java / Python / JavaScript 中调试 Application Insights SDK 配置脚本
+    \item 参与设计、修改与调试 PowerShell / Python / PS 工作流与图形化 Runbook、DSC 配置；就合作伙伴集成与工作区方案（更新管理、虚拟机自动启停、更改跟踪、资源清册）提供建议
+    \item 对接 Adobe、Intel、Amazon 等关键客户，专责处理高风险与长期未决案例升级
+    \item 负责上海、无锡、北京三地共 12 人团队的技术管理与协调，并处理跨团队职责边界争议
+    \item 与技术负责人及协作技术顾问共同开展案例分析、技术面试与团队规划
   \end{rSubsection}
 
 \end{rSection}
@@ -95,7 +94,7 @@
   \begin{rSubsection}{银河卷积神经网络的数据集蒸馏}{09.2024 - 12.2025}{导师：Tala Talaei Khoei}{NEU}
     \item 通过使用最新 Galaxy Zoo 数据集的提取和整理版本，在星系形态分类等任务中展现出卓越的性能
     \item 仔细调整统计显著性阈值以确定验证损失趋势，以优化性能
-    \item 使用 STM 来防止过拟合并加速学习过程
+    \item 使用 STM（Self-Adaptive Trajectory Matching，自适应轨迹匹配）防止过拟合并加速学习过程
     \item 提供更高的分类准确性和更高效的训练，同时减少类别失衡并提高整体数据质量
   \end{rSubsection}
 
@@ -125,24 +124,24 @@
 \begin{rSection}{实习 \& 兼职}
 
   \begin{rSubsection}{Roux研究院}{01.2025 - 05.2025}{机器学习助教}{美国}
-    \item 辅导学生了解不同类型的的机器学习模型以及相关技巧
-    \item 与教授讨论课程分配；在办公时间回答问题并检阅项目
+    \item 辅导学生了解各类机器学习模型及相关技巧
+    \item 与教授讨论课程分配；在办公时间答疑并批阅课程项目
   \end{rSubsection}
 
-  \begin{rSubsection}{俄州大电气与计算机系实验室}{09.2018 - 12.2018}{实验助教 \& 阅卷人}{美国}
-    \item 实验期间指导学生练习 TI MPS430 系列微控制器编码
-    \item 批改每周测试和实验报告
+  \begin{rSubsection}{俄亥俄州立大学电气与计算机工程系实验室}{09.2018 - 12.2018}{实验助教 \& 阅卷人}{美国}
+    \item 实验期间指导学生练习 TI MSP430 系列微控制器编码
+    \item 批改每周测验与实验报告
   \end{rSubsection}
 
   \begin{rSubsection}{华虹计通}{05.2018 - 07.2018}{软件研发工程师}{上海}
-    \item 学习自动售检票系统系统构架，数据流设计，运作原则以及编码规则
+    \item 学习自动售检票（AFC）系统的系统架构、数据流设计、运作原则与编码规范
     \item 改进西安地铁 1 至 4 号线地铁 UI 交互界面并更新最新地铁线路数据
-    \item 从甲骨文 SQL 至 DB2 的数据库转移
+    \item 完成数据库由 Oracle SQL 向 DB2 的迁移
   \end{rSubsection}
 
   \begin{rSubsection}{华信能源}{05.2017 - 07.2017}{信息系统工程师}{上海}
-    \item 改善公司前端 OA 系统，新增人性化时间表并与公司 app (Android / IOS)连接
-    \item 设计 Access VBA 宏指令集，自动计算各部门电话账单并进行简单的筛选、报表统计和导出
+    \item 改进公司前端 OA 系统，新增人性化排班表并与公司 App（Android / iOS）打通
+    \item 设计 Access VBA 宏指令集，自动核算各部门电话账单并支持筛选、报表统计与导出
   \end{rSubsection}
 
 \end{rSection}
@@ -167,9 +166,9 @@
 
 \begin{rSection}{课程}
 
-  \begin{tabular}{ @{} >{\bfseries}l @{\hspace{5ex}} p{12cm} }
+  \begin{tabular}{ @{} >{\bfseries}l @{\hspace{5ex}} p{13cm} }
     计算机 & 机器学习, 数据库管理系统, 算法, 云计算, 软件开发与设计, 操作系统, 计算机体系结构与设计, 计算机组成与嵌入式系统          \\
-    电气  & 模拟系统与电路, 信号与系统, 数字逻辑, 微控制器, 半导体电子器件, 光学工程, 反馈控制系统, 高级数字设计, VLSI数字信号处理系统 \\
+    电气  & 模拟系统与电路, 信号与系统, 数字逻辑, 微控制器, 半导体电子器件, 光学工程, 反馈控制系统, 高级数字设计, VLSI 数字信号处理系统 \\
     数学  & 科学家与工程师微积分, 线性代数, 高等数学, 数值分析, 偏微分方程                                     \\
     其他  & 工程经济决策, 工程伦理, 概率论与数理统计                                                  \\
   \end{tabular}

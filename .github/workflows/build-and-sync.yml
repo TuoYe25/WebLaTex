@@ -1,0 +1,114 @@
+name: Build & Sync Resume
+
+# 触发条件刻意只监听源文件变更：
+#  1) 改完 .tex 自动重编译，不再依赖「记得本地编译 + 手动提交 PDF」的纪律；
+#  2) 回写 PDF 的提交只动 PDF/，不会再次触发本流程，避免死循环；
+#  3) 用 GITHUB_TOKEN 推送不会触发其它 workflow，所以「编译」与「推网站」必须在同一个 job 内完成。
+on:
+  push:
+    branches: [main]
+    paths:
+      - '*.tex'
+      - 'resume.cls'
+      - '.github/workflows/build-and-sync.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write   # 回写 PDF 到本仓库需要写权限
+
+jobs:
+  build-and-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout WebLaTex
+        uses: actions/checkout@v4
+
+      # 让 PDF 元数据里的时间戳可复现：同样的源文件 → 同样的字节，
+      # 于是「内容没变就不产生新提交」，网站也不会出现无意义的抖动。
+      - name: Resolve SOURCE_DATE_EPOCH
+        run: echo "SOURCE_DATE_EPOCH=$(git log -1 --format=%ct)" >> "$GITHUB_ENV"
+
+      # 字体用 TeXLive 自带的 Fandol，镜像内已包含，本地与云端渲染一致
+      - name: Compile resume PDFs (TeX Live 2025)
+        uses: xu-cheng/texlive-action@v3
+        with:
+          texlive_version: 2025
+          scheme: full
+          run: |
+            set -euo pipefail
+            mkdir -p build
+            for f in "梅越_简历.tex" "Edwin_CV.tex"; do
+              base="${f%.tex}"
+              echo "::group::编译 $f"
+              # 守卫 1：编译必须成功（-halt-on-error 遇到错误直接非零退出）
+              if ! xelatex -interaction=nonstopmode -halt-on-error -file-line-error \
+                     -output-directory=build "$f"; then
+                echo "编译失败：$f"
+                grep -aE '^! ' -A6 "build/$base.log" || true
+                exit 1
+              fi
+              # 守卫 2：日志里不允许残留任何错误
+              if grep -aE '^! ' "build/$base.log"; then
+                echo "日志中发现 LaTeX 错误：$f"
+                exit 1
+              fi
+              # 守卫 3：PDF 必须存在、非空、体积正常（页面背景图约 470KB，过小即为渲染异常）
+              test -s "build/$base.pdf" || { echo "未生成 PDF：$f"; exit 1; }
+              size=$(stat -c%s "build/$base.pdf")
+              if [ "$size" -lt 100000 ]; then
+                echo "PDF 体积异常（$size 字节），疑似渲染不完整：$f"
+                exit 1
+              fi
+              echo "OK: $base.pdf（$size 字节）"
+              echo "::endgroup::"
+            done
+            ls -la build/
+
+      # 只有全部守卫通过才会走到这里，因此坏版本不会覆盖仓库里好的 PDF
+      - name: Commit built PDFs back to repo
+        run: |
+          set -euo pipefail
+          cp "build/梅越_简历.pdf" "PDF/梅越_简历.pdf"
+          cp "build/Edwin_CV.pdf" "PDF/Edwin_CV.pdf"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add PDF/
+          if git diff --cached --quiet; then
+            echo "PDF 无变化，跳过提交"
+          else
+            git commit -m "chore: rebuild resume PDFs [skip ci]"
+            git push
+          fi
+
+      - name: Checkout homepage repo
+        uses: actions/checkout@v4
+        with:
+          repository: TuoYe25/tuoye25.github.io
+          path: homepage
+          token: ${{ secrets.PERSONAL_TOKEN }}
+
+      - name: Sync PDFs to homepage
+        working-directory: homepage
+        run: |
+          set -euo pipefail
+          mkdir -p docs
+          cp "../build/梅越_简历.pdf" "docs/梅越_简历.pdf"
+          cp "../build/Edwin_CV.pdf" "docs/Edwin_CV.pdf"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/
+          if git diff --cached --quiet; then
+            echo "网站 PDF 无变化"
+          else
+            git commit -m "Sync latest resume PDFs from WebLaTex"
+            git push
+          fi
+
+      # 方便在手机/网页端直接从 Actions 页面下载编译结果
+      - name: Upload PDF artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-pdfs
+          path: build/*.pdf
+          if-no-files-found: ignore
