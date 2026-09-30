@@ -29,7 +29,7 @@
 %----------------------------------------------------------------------------------------
 
 \begin{rSection}{Self-Introduction}
-    This is Edwin, currently working as a Senior AI Development Engineer while serving as CTO for a side venture where I lead technical decision-making and architecture design. My research focused on computer vision and model optimization, with a first-author paper published at ICICML 2023 on knowledge distillation in deep reinforcement learning. Previously, I worked on the Azure Cloud Architecture team at Microsoft and led data analytics and full-stack development at FNZ. I am proficient with PyTorch, TensorFlow, LangGraph, and various AI Agent frameworks including Claude, DeepSeek, and Multica. I look forward to combining my research background and engineering experience to deliver impactful AI solutions.
+    This is Edwin, currently working as a Deep Learning Algorithm Engineer leading the company's AI agent infrastructure (daemon / harness / skills / MCP) from the ground up, while serving as CTO for a side venture where I lead technical decision-making and architecture design. My research focused on computer vision and model optimization, with a first-author paper published at ICICML 2023 on knowledge distillation in deep reinforcement learning. Previously, I worked on the Azure Cloud Architecture team at Microsoft and led data analytics and full-stack development at FNZ. I am proficient with PyTorch, TensorFlow, LangGraph, and various AI Agent frameworks including Claude, Codex, DeepSeek, and Multica. I look forward to combining my research background and engineering experience to deliver impactful AI solutions.
 \end{rSection}
 
 %----------------------------------------------------------------------------------------
@@ -52,11 +52,13 @@
 
 \begin{rSection}{Experience}
 
-    \begin{rSubsection}{Qunxian Group}{Jun 2026 - Present}{Senior AI Development Engineer}{Shanghai, China}
-        \item Lead the company's digital transformation strategy, responsible for AI technical architecture design and implementation.
-        \item Guilin Factory AI Data Foundation: Design and build an industrial-grade AI data foundation, integrating multi-source heterogeneous production data, responsible for model training and performance optimization, achieving intelligent upgrading of production processes.
-        \item ERP System Design and Optimization: Lead the intelligent transformation of the ERP system, embedding AI capabilities into core business processes, improving supply chain management and resource allocation efficiency.
-        \item OA Platform AI Transformation: Drive the intelligent upgrading of the company's OA system, integrating AI functions such as intelligent approval, knowledge Q\&A, and process automation, significantly improving office efficiency.
+    \begin{rSubsection}{Shanghai Deep Star Energy Technology Co., Ltd.}{Aug 2026 - Present}{Deep Learning Algorithm Engineer}{Shanghai, China}
+        \item Super-agent infrastructure from scratch: built the company's in-house agent stack on top of frontier models (Claude, Codex, DeepSeek) through multi-model iterative loops, owning four core components --- daemon (always-on daemon covering task push, session resumption, approval gate and crash recovery), harness (layered rule set and safety floor), skills (reusable skill library with on-demand loading), and MCP (tool and protocol access layer).
+        \item Agent runtime and protocol layer: designed the multi-turn agent loop, tool calling, context compaction \& continuation, and layered prompt injection for long-running and cross-session execution; shipped a production-grade MCP service with 8 read-only tools covering service accounts, multi-tenant boundaries, audit and trace correlation, rate limiting, bounded concurrency, fault injection \& recovery and a kill switch, validated against real Claude and Codex clients plus a security live matrix.
+        \item AI R\&D fleet: orchestrated the toolchain (Paseo, Multica, Metathinking, VS Server, Sol-Pi) into a multi-agent $\times$ multi-model $\times$ multi-role delivery pipeline spanning architecture review, implementation, verification and release; defined task-as-single-source-of-truth conventions (role routing, evidence chain, reviewer $\neq$ author) so agent output stays auditable, handover-ready and reviewable.
+        \item Token efficiency \& delivery at scale: established four-bucket token metering (input / output / cache read / cache write) and per-task cost ledgers, and continuously improved token utilization via model routing, prompt-cache prefix alignment, layered and on-demand context loading, and deterministic terminal-output compaction; on a single project, delivered 11 pull requests and ~9,500 lines of change within 9 calendar days, with test code accounting for 49\% of all churn.
+        \item Data platform \& AI expert diagnosis: built a data analytics platform for company projects, unifying heterogeneous sources (industrial PLC hourly data, water-supply non-revenue water and DMA zones, project intelligence) and driving an end-to-end natural-language ``retrieve--analyze--draft'' workflow that delivers AI expert diagnosis reports; representative outputs include pipeline leakage and DMA NRW analysis, online water-meter anomaly detection with meter-replacement planning, and a water project intelligence CRM.
+        \item 2026 ``Shuqing Cup'' Data Utilization Track (Team Lead / Algorithm Lead): represented the company in the Shanghai Data Utilization and Security Governance Skills Competition, coordinating goal breakdown and milestones for a 5-person team; led the algorithm design of the ``Shuimai Zhiqing'' water-utility project intelligence product --- structured document extraction, cross-source entity resolution, opportunity scoring, gold-standard dataset and model evaluation --- delivering a closed loop of cross-platform merging $+$ source verifiability $+$ full-stage tracking $+$ intelligent scoring.
     \end{rSubsection}
 
     \begin{rSubsection}{Digital Factory (Side Business)}{Jan 2026 - Present}{Co-founder \& CTO}{Shanghai, China}
@@ -96,6 +98,12 @@
 %----------------------------------------------------------------------------------------
 
 \begin{rSection}{Project}
+
+    \begin{rSubsection}{Industrial AI Data Foundation \& Business System AI Transformation}{Jun 2026 - Jul 2026}{Senior AI Development Engineer}{Qunxian Group}
+        \item Designed and built an industrial-grade AI data foundation, integrating multi-source heterogeneous production data from the Guilin plant (4$\times$42 MVA submerged-arc furnace ferromanganese lines), owning model training and performance optimization.
+        \item Led the intelligent transformation of the ERP system, embedding AI capabilities into supply chain management and resource allocation.
+        \item Drove the AI upgrade of the OA platform, integrating intelligent approval, knowledge Q\&A and process automation.
+    \end{rSubsection}
 
     \begin{rSubsection}{Dataset Distillation of Galaxy CNN}{Sep 2024 - Dec 2025}{Inst. Tala Talaei Khoei}{NEU}
         \item Demonstrated superior performance in tasks like galaxy morphology classification by using a distilled and curated version of the newest Galaxy Zoo dataset.
@@ -161,15 +169,17 @@
 
 \begin{rSection}{Skill}
 
-    \begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} p{14cm} }
+    \begin{tabular}{ @{} >{\bfseries}l @{\hspace{5ex}} p{12cm} }
         Languages           & Python, C\#, Java, C++, Golang, Shell, JavaScript, M, VBA, VHDL       \\
         ML Frameworks       & PyTorch, TensorFlow, Keras, Scikit-learn, LangGraph                   \\
-        Models \& AI Tools  & Claude, Codex, DeepSeek, Pi, Wan, Flux, Kling, Seedance               \\
-        AI Agent Frameworks & Multica, HiClaw, PaperClips, Hermes                                   \\
+        Models \& AI Tools  & Claude, Codex, DeepSeek, Qwen, Pi, Wan, Flux, Kling, Seedance         \\
+        Agent Frameworks    & MCP Server, Agent Runtime / daemon, harness rule orchestration, skill library \\
+        Agent Tools         & Multica, Metathinking, Paseo, Sol-Pi, HiClaw, PaperClips, Hermes    \\
+        Agent Engineering   & Token cost governance, model routing, prompt-cache alignment, context compaction, multi-agent orchestration \\
         Model Optimization  & Knowledge Distillation, Quantization, Pruning, Inference Acceleration \\
         Databases           & Microsoft SQL, KQL, MySQL, MongoDB, SQLite                            \\
         Cloud               & Azure, AWS, Distributed Systems, Microservices                        \\
-        Dev Tools           & VS, VS Code, Git, Docker, SQL Server, Kusto, TailScale                \\
+        Dev Tools           & VS, VS Code, Git, Docker, SQL Server, Kusto, TailScale, Coder Workspace \\
         Hardware            & Arduino, Multiplexers, PLDs, Clocked Sequential Circuits, VLSI        \\
     \end{tabular}
 
@@ -182,7 +192,7 @@
 
 \begin{rSection}{Coursework}
 
-    \begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} p{12cm} }
+    \begin{tabular}{ @{} >{\bfseries}l @{\hspace{5ex}} p{12cm} }
         Computer   & Machine Learning, Database Management Sys, Algorithms, Cloud Computing, Software Development \& Design, Operating Systems, Computer Architecture \& Design, Computer Organization \& Embedded Systems                            \\
         Electrical & Analog Systems \& Circuits, Signal \& Systems, Digital Logic, Microcontrollers, Semiconductor Electronic Devices, Optical engineering, Feedback Control Systems, Advanced Digital Design, VLSI Digital Signal Processing Systems \\
         Math       & Calculus for Scientists \& Engineers, Linear Algebra, Higher Mathematics, Numerical Analysis, Partial Differential Equations                                                                                                     \\

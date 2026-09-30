@@ -27,7 +27,7 @@
 \begin{document}
 
 \begin{rSection}{个人简介}
-  这里是梅越，目前担任高级AI开发工程师，同时以CTO身份参与创业项目的技术决策与架构设计。我的研究方向聚焦于深度学习与模型优化，在知识蒸馏与计算机视觉领域有深入探索，并以第一作者在 ICICML 2023 发表相关论文。工业经验方面，我曾任职于微软（中国）Azure 云架构团队，并在富谙智科技主导数据分析与全栈开发，具备云原生架构、AI 工程化落地及跨团队协作的完整能力。技术栈覆盖 PyTorch、TensorFlow、LangGraph 等主流框架，以及 Claude、DeepSeek、Multica 等 AI Agent 工具链。期待将学术积累与工程实践结合，在 AI 软件研发的岗位上持续创造价值。
+  我的研究方向聚焦于深度学习与模型优化，在知识蒸馏与计算机视觉领域有深入探索，并以第一作者在ICICML 2023 发表相关论文。目前担任深度学习算法工程师，主导公司 AI 智能体基础设施（daemon / harness / skills / MCP）从 0 到 1 的建设，同时以CTO身份参与创业项目的技术决策与架构设计。我曾任职于微软（中国）Azure 云架构团队，并在富谙智科技主导数据分析与全栈开发，具备云原生架构、AI 工程化落地及跨团队协作的完整能力。技术栈覆盖PyTorch、TensorFlow、LangGraph 等主流框架，以及Claude、Codex、DeepSeek、Multica 等AI Agent工具链。期待将学术积累与工程实践结合，在AI 软件研发的岗位上持续创造价值。
 \end{rSection}
 
 \begin{rSection}{学历}
@@ -42,11 +42,13 @@
 
 \begin{rSection}{工作}
 
-  \begin{rSubsection}{群贤集团}{06.2026 - 至今}{高级AI开发工程师}{上海}
-    \item 主导公司数字化转型战略，负责AI技术架构设计与落地实施
-    \item 桂林工厂AI数据底座：设计并构建工业级AI数据底座，整合多源异构生产数据，负责模型训练与性能优化，实现生产流程智能化升级
-    \item 公司ERP系统设计与优化：主导ERP系统智能化改造，将AI能力嵌入核心业务流程，提升供应链管理与资源配置效率
-    \item OA平台AI化转型：推动公司OA系统智能化升级，集成智能审批、知识问答、流程自动化等AI功能，显著提升办公效率
+  \begin{rSubsection}{上海深度星能科技有限公司}{08.2026 - 至今}{深度学习算法工程师}{上海}
+    \item 超级智能体基础设施（从 0 到 1）：以 Claude、Codex、DeepSeek 等顶尖模型为推理引擎，采用多模型交叉循环迭代方式从零构建公司自有智能体体系，独立负责 daemon（常驻守护进程：任务推送、会话续接、审批闸门、崩溃恢复）、harness（分层规则与安全底座）、skills（可复用技能库与按需加载）、MCP（工具与协议接入层）四大核心部件
+    \item 智能体运行时与协议层：设计多回合 agent loop、工具调用、上下文压缩与续接、prompt 分层注入，使智能体具备长期稳定运行与跨会话续接能力；并落地生产级 MCP 服务与 8 个首版只读工具，覆盖 service account、多租户边界、审计与 trace 关联、限流、有界并发、故障注入与恢复、kill switch，通过 Claude / Codex 双客户端真实互操作与安全矩阵验证
+    \item AI 研发舰队：熟练编排 Paseo、Multica、Metathinking、VS Server、Sol-Pi 等工具链，组建“多智能体 $\times$ 多模型 $\times$ 多角色”研发流水线，覆盖架构评审、实现、验证与发布；以任务为单一真值源定义角色分工、证据链与评审门禁（评审者 $\neq$ 作者），使 agent 产出可审计、可交接、可复盘
+    \item Token 效率优化与规模化交付：建立四桶 token 计量（新输入 / 输出 / 缓存读 / 缓存写）与任务级成本台账，通过模型路由、缓存前缀对齐、上下文分层与按需加载、终端输出确定性压缩等手段持续优化 token 利用率；单个项目在 9 个自然日内协同交付 11 个 PR、约 9,500 行代码变更，其中测试代码占比 49\%
+    \item 数字化平台与 AI 专家诊断：为公司项目搭建数字化数据分析平台，打通工业 PLC 小时数据、供水产销差与 DMA 分区、项目情报等多源异构数据，以自然语言驱动“取数—分析—成稿”全流程并交付 AI 专家诊断报告；代表成果包括供水管网漏损与 DMA 产销差分析、在线水表异常识别与换表计划优化、供水与水利项目情报 CRM 方案
+    \item 代表公司参加 2026“数擎杯”数据开发利用赛道（队长 / 数据算法负责人）：统筹 5 人团队的目标拆解与节点排期；主导“水脉智擎”水务项目情报数据产品的算法设计，基于经授权的公共数据（5,506 条授权运营公共数据资源目录）与多源融合，负责文档结构化抽取、跨源实体归一、商机分级评分、金标数据集与模型评测，实现“跨平台合并 $+$ 来源可核验 $+$ 阶段全链追踪 $+$ 智能评分”的闭环
   \end{rSubsection}
 
   \begin{rSubsection}{数字工厂（副业）}{01.2026 - 至今}{联合创始人 \& CTO}{上海}
@@ -83,6 +85,12 @@
 \end{rSection}
 
 \begin{rSection}{项目}
+
+  \begin{rSubsection}{工业 AI 数据底座与业务系统 AI 化}{06.2026 - 07.2026}{高级 AI 开发工程师}{群贤集团}
+    \item 设计并构建工业级 AI 数据底座，整合多源异构生产数据（桂林工厂 4$\times$42MVA 矿热炉锰合金产线），负责模型训练与性能优化
+    \item 主导 ERP 系统智能化改造，将 AI 能力嵌入供应链管理与资源配置核心流程
+    \item 推动 OA 平台 AI 化升级，集成智能审批、知识问答与流程自动化，显著提升办公效率
+  \end{rSubsection}
 
   \begin{rSubsection}{银河卷积神经网络的数据集蒸馏}{09.2024 - 12.2025}{导师：Tala Talaei Khoei}{NEU}
     \item 通过使用最新 Galaxy Zoo 数据集的提取和整理版本，在星系形态分类等任务中展现出卓越的性能
@@ -141,15 +149,17 @@
 
 \begin{rSection}{技能}
 
-  \begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} p{14cm} }
+  \begin{tabular}{ @{} >{\bfseries}l @{\hspace{5ex}} p{13cm} }
     编程语言       & Python, C\#, Java, C++, Golang, Shell, JavaScript, M, VBA, VHDL \\
     机器学习框架     & PyTorch, TensorFlow, Keras, Scikit-learn, LangGraph             \\
-    模型与AI工具    & Claude, Codex, DeepSeek, Pi, Wan, Flux, Kling, Seedance         \\
-    AI Agent框架 & Multica, HiClaw, PaperClips, Hermes                             \\
+    模型与AI工具    & Claude, Codex, DeepSeek, Qwen, Pi, Wan, Flux, Kling, Seedance   \\
+    智能体框架      & MCP Server, Agent Runtime / daemon, harness 规则编排, skills 技能库 \\
+    Agent工具链   & Multica, Metathinking, Paseo, Sol-Pi, HiClaw, PaperClips, Hermes \\
+    智能体工程      & token 成本治理, 模型路由, prompt cache 对齐, 上下文分层与压缩, 多智能体编排, 模型评测 \\
     模型优化技术     & 知识蒸馏 (Knowledge Distillation), 模型量化, 剪枝, 推理加速                   \\
     数据库        & Microsoft SQL, KQL, MySQL, MongoDB, SQLite                      \\
     云平台与架构     & Azure, AWS, 分布式系统, 微服务                                          \\
-    开发工具       & VS, VS Code, Git, Docker, SQL Server, Kusto, TailScale          \\
+    开发工具       & VS, VS Code, Git, Docker, SQL Server, Kusto, TailScale, Coder Workspace \\
     硬件基础       & Arduino, Multiplexers, PLDs, Clocked Sequential Circuits, VLSI  \\
   \end{tabular}
 
@@ -157,7 +167,7 @@
 
 \begin{rSection}{课程}
 
-  \begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} p{12cm} }
+  \begin{tabular}{ @{} >{\bfseries}l @{\hspace{5ex}} p{12cm} }
     计算机 & 机器学习, 数据库管理系统, 算法, 云计算, 软件开发与设计, 操作系统, 计算机体系结构与设计, 计算机组成与嵌入式系统          \\
     电气  & 模拟系统与电路, 信号与系统, 数字逻辑, 微控制器, 半导体电子器件, 光学工程, 反馈控制系统, 高级数字设计, VLSI数字信号处理系统 \\
     数学  & 科学家与工程师微积分, 线性代数, 高等数学, 数值分析, 偏微分方程                                     \\
